@@ -7,9 +7,9 @@ ROS_BPN = "${@d.getVar('BPN', True).replace('-', '_')}"
 ROS_SPN ?= "${ROS_BPN}"
 ROS_SP = "${ROS_SPN}-${PV}"
 
-ROS_PREFIX ?= "${base_prefix}/opt/ros/${ROSDISTRO}"
+ROS_PREFIX ?= "/opt/ros/${ROSDISTRO}"
 
-export ros_prefix = "${ROS_PREFIX}"
+export ros_prefix = "${base_prefix}${ROS_PREFIX}"
 
 export ros_bindir = "${ros_prefix}/bin"
 export ros_libdir = "${ros_prefix}/${baselib}"
